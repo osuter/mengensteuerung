@@ -12,9 +12,9 @@ rolemax 7 \; individualmin 0 \; individualmax 63 \; pitch 1 \; gemeinsam
 #X obj 168 17 hsl 128 20 10 10000 1 0 gemeinsam gemeinsam gemeinsam
 20 10 0 14 -204786 -1 -1 8467 1;
 #X obj 305 17 hsl 128 20 10 10000 1 0 individuell individuell individuell
-20 10 0 14 -204786 -1 -1 3823 1;
+20 10 0 14 -204786 -1 -1 5323 1;
 #X obj 60 18 tgl 20 0 mitmachen \$0.bli mitmachen 25 10 0 14 -204786
--1 -1 0 1;
+-1 -1 1 1;
 #X obj 175 63 r gemeinsam;
 #X floatatom 175 85 5 0 0 0 - - -;
 #X floatatom 311 90 5 0 0 0 - - -;
@@ -54,11 +54,10 @@ rolemax 7 \; individualmin 0 \; individualmax 63 \; pitch 1 \; gemeinsam
 #N canvas 220 44 741 546 click_forms 0;
 #N canvas 0 50 450 250 (subpatch) 0;
 #X array click 30 float 1;
-#A 0 0.3 0.109795 0.0401833 0.0147065 0.00538234 0.00196985 0.000720934
-0.00026385 9.65651e-05 3.53413e-05 1.29344e-05 4.73377e-06 1.73249e-06
-6.34063e-07 2.32057e-07 8.49292e-08 3.10827e-08 1.13758e-08 4.16336e-09
-1.52372e-09 5.57659e-10 2.04094e-10 7.46953e-11 2.73373e-11 1.0005e-11
-3.66168e-12 1.34012e-12 4.90462e-13 1.79501e-13 6.56947e-14;
+#A 0 2.5785e-06 0.212134 0.3 0.212132 3.99846e-08 -0.212132 -0.3 -0.212131
+2.54383e-06 0.212134 0.266667 0.258333 0.433333 0.7 0.841666 -0.212131
+2.50938e-06 0.212134 0.3 0.212132 1.09106e-07 -0.212132 -0.65 -0.212131
+2.47471e-06 0.212134 0.3 0.212132 1.43776e-07 -0.212132;
 #X coords 0 1 29 -1 240 240 1 0 0;
 #X restore 22 31 graph;
 #X obj 325 123 s click;
@@ -89,7 +88,7 @@ rolemax 7 \; individualmin 0 \; individualmax 63 \; pitch 1 \; gemeinsam
 #X obj 174 508 tabwrite~ click;
 #X obj 201 485 *~ 0.3;
 #X obj 174 289 hradio 15 1 0 5 empty empty empty 0 -8 0 10 -204786
--1 -1 0;
+-1 -1 2;
 #X obj 174 353 t b a;
 #X obj 174 376 samplerate~;
 #X obj 174 331 + 4;
@@ -102,27 +101,27 @@ rolemax 7 \; individualmin 0 \; individualmax 63 \; pitch 1 \; gemeinsam
 #X msg 27 350 30;
 #X msg 56 352 60;
 #X text 258 289 sine;
-#X obj 526 61 tgl 18 0 0.click.copy 0.click.copy 0 5 9 0 11 -262130
--1 -1 0 1;
-#X obj 544 61 tgl 18 0 1.click.copy 1.click.copy 1 5 9 0 11 -262130
--1 -1 0 1;
-#X obj 562 61 tgl 18 0 2.click.copy 2.click.copy 2 5 9 0 11 -262130
--1 -1 0 1;
-#X obj 580 61 tgl 18 0 3.click.copy 3.click.copy 3 5 9 0 11 -262130
--1 -1 0 1;
-#X obj 598 61 tgl 18 0 4.click.copy 4.click.copy 4 5 9 0 11 -262130
--1 -1 0 1;
-#X obj 616 61 tgl 18 0 5.click.copy 5.click.copy 5 5 9 0 11 -262130
--1 -1 0 1;
-#X obj 634 61 tgl 18 0 6.click.copy 6.click.copy 6 5 9 0 11 -262130
--1 -1 0 1;
-#X obj 652 61 tgl 18 0 7.click.copy 7.click.copy 7 5 9 0 11 -262130
--1 -1 0 1;
+#X obj 526 61 tgl 18 0 0.click.copy \$0.bli 0 5 9 0 11 -262130 -1 -1
+0 1;
+#X obj 544 61 tgl 18 0 1.click.copy \$0.bli 1 5 9 0 11 -262130 -1 -1
+0 1;
+#X obj 562 61 tgl 18 0 2.click.copy \$0.bli 2 5 9 0 11 -262130 -1 -1
+0 1;
+#X obj 580 61 tgl 18 0 3.click.copy \$0.bli 3 5 9 0 11 -262130 -1 -1
+0 1;
+#X obj 598 61 tgl 18 0 4.click.copy \$0.bli 4 5 9 0 11 -262130 -1 -1
+0 1;
+#X obj 616 61 tgl 18 0 5.click.copy \$0.bli 5 5 9 0 11 -262130 -1 -1
+0 1;
+#X obj 634 61 tgl 18 0 6.click.copy \$0.bli 6 5 9 0 11 -262130 -1 -1
+0 1;
+#X obj 652 61 tgl 18 0 7.click.copy \$0.bli 7 5 9 0 11 -262130 -1 -1
+0 1;
 #X obj 526 27 tgl 18 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X text 568 27 send to group(s);
 #X obj 527 99 hradio 18 1 0 8 click.restore click.restore empty 0 -8
-0 10 -261682 -1 -1 1;
+0 10 -261682 -1 -1 7;
 #N canvas 646 370 259 202 get.from.group 0;
 #X obj 32 16 r click.restore;
 #X obj 32 152 tabwrite~ click;
