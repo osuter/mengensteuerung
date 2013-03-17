@@ -1,0 +1,12 @@
+#N canvas 220 44 318 212 10;
+#X obj 134 13 r \$1;
+#X obj 26 50 f;
+#X obj 26 96 list trim;
+#X obj 26 13 r state_dump_req;
+#X obj 26 120 s state_dump_send;
+#X obj 26 74 list prepend \$1;
+#X connect 0 0 1 1;
+#X connect 1 0 5 0;
+#X connect 2 0 4 0;
+#X connect 3 0 1 0;
+#X connect 5 0 2 0;
