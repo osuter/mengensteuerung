@@ -51,7 +51,7 @@ rolemax 7 \; individualmin 0 \; individualmax 63 \; pitch 1 \; gemeinsam
 #X connect 16 0 10 0;
 #X restore 9 79 pd Menge;
 #X obj 11 334 master.mixer \$0 1;
-#N canvas 220 44 586 546 click_forms 0;
+#N canvas 220 44 738 540 click_forms 0;
 #N canvas 0 50 450 250 (subpatch) 0;
 #X array click 30 float 1;
 #A 0 0.3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
@@ -99,22 +99,39 @@ rolemax 7 \; individualmin 0 \; individualmax 63 \; pitch 1 \; gemeinsam
 #X msg 27 350 30;
 #X msg 56 352 60;
 #X text 258 289 sine;
-#X obj 324 13 tgl 18 0 0.click.copy 0.click.copy 0 5 9 0 11 -262130
+#X obj 526 61 tgl 18 0 0.click.copy 0.click.copy 0 5 9 0 11 -262130
 -1 -1 0 1;
-#X obj 342 13 tgl 18 0 1.click.copy 1.click.copy 1 5 9 0 11 -262130
+#X obj 544 61 tgl 18 0 1.click.copy 1.click.copy 1 5 9 0 11 -262130
 -1 -1 0 1;
-#X obj 360 13 tgl 18 0 2.click.copy 2.click.copy 2 5 9 0 11 -262130
+#X obj 562 61 tgl 18 0 2.click.copy 2.click.copy 2 5 9 0 11 -262130
 -1 -1 0 1;
-#X obj 378 13 tgl 18 0 3.click.copy 3.click.copy 3 5 9 0 11 -262130
+#X obj 580 61 tgl 18 0 3.click.copy 3.click.copy 3 5 9 0 11 -262130
 -1 -1 0 1;
-#X obj 396 13 tgl 18 0 4.click.copy 4.click.copy 4 5 9 0 11 -262130
+#X obj 598 61 tgl 18 0 4.click.copy 4.click.copy 4 5 9 0 11 -262130
 -1 -1 0 1;
-#X obj 414 13 tgl 18 0 5.click.copy 5.click.copy 5 5 9 0 11 -262130
+#X obj 616 61 tgl 18 0 5.click.copy 5.click.copy 5 5 9 0 11 -262130
 -1 -1 0 1;
-#X obj 432 13 tgl 18 0 6.click.copy 6.click.copy 6 5 9 0 11 -262130
+#X obj 634 61 tgl 18 0 6.click.copy 6.click.copy 6 5 9 0 11 -262130
 -1 -1 0 1;
-#X obj 450 13 tgl 18 0 7.click.copy 7.click.copy 7 5 9 0 11 -262130
+#X obj 652 61 tgl 18 0 7.click.copy 7.click.copy 7 5 9 0 11 -262130
 -1 -1 0 1;
+#X obj 526 27 tgl 18 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X text 568 27 send to group(s);
+#X obj 527 99 hradio 18 1 0 8 click.restore click.restore empty 0 -8
+0 10 -261682 -1 -1 0;
+#N canvas 646 370 259 202 get.from.group 0;
+#X obj 32 16 r click.restore;
+#X obj 32 152 tabwrite~ click;
+#X obj 59 93 tabplay~;
+#X obj 32 38 t b a;
+#X msg 59 66 set \$1.click \, bang;
+#X connect 0 0 3 0;
+#X connect 2 0 1 0;
+#X connect 3 0 1 0;
+#X connect 3 1 4 0;
+#X connect 4 0 2 0;
+#X restore 537 164 pd get.from.group;
 #X connect 2 0 8 0;
 #X connect 3 0 5 0;
 #X connect 4 0 3 0;
@@ -148,21 +165,37 @@ rolemax 7 \; individualmin 0 \; individualmax 63 \; pitch 1 \; gemeinsam
 #X connect 33 1 35 0;
 #X connect 34 0 25 0;
 #X connect 35 0 25 0;
+#X connect 45 0 37 0;
+#X connect 45 0 38 0;
+#X connect 45 0 39 0;
+#X connect 45 0 40 0;
+#X connect 45 0 41 0;
+#X connect 45 0 42 0;
+#X connect 45 0 43 0;
+#X connect 45 0 44 0;
 #X restore 9 113 pd click_forms;
-#N canvas 220 45 588 545 presets 0;
-#X obj 385 28 state.save.f gemeinsam;
-#X obj 385 52 state.save.f individuell;
-#X obj 385 77 state.save.f groupmin;
-#X obj 385 101 state.save.f groupmax;
-#X obj 385 127 state.save.f rolemin;
-#X obj 385 151 state.save.f rolemax;
-#X obj 385 177 state.save.f individualmin;
-#X obj 385 201 state.save.f individualmax;
-#X obj 53 86 s state_dump_req;
-#X obj 51 123 r state_dump_send;
-#X obj 70 41 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
-#X obj 51 145 print STATE;
-#X connect 9 0 11 0;
-#X connect 10 0 8 0;
+#N canvas 220 45 588 545 presets 1;
+#X obj 118 167 s state_dump_req;
+#X obj 116 204 r state_dump_send;
+#X obj 135 122 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 116 226 print STATE;
+#N canvas 530 729 450 300 state.save.f 0;
+#X restore 385 28 pd state.save.f gemeinsam;
+#N canvas 530 729 450 300 state.save.f 0;
+#X restore 385 52 pd state.save.f individuell;
+#N canvas 530 729 450 300 state.save.f 0;
+#X restore 385 77 pd state.save.f groupmin;
+#N canvas 530 729 450 300 state.save.f 0;
+#X restore 385 101 pd state.save.f groupmax;
+#N canvas 530 729 450 300 state.save.f 0;
+#X restore 385 127 pd state.save.f rolemin;
+#N canvas 530 729 450 300 state.save.f 0;
+#X restore 385 151 pd state.save.f rolemax;
+#N canvas 530 729 450 300 state.save.f 0;
+#X restore 385 177 pd state.save.f individualmin;
+#N canvas 530 729 450 300 state.save.f 0;
+#X restore 385 201 pd state.save.f individualmax;
+#X connect 1 0 3 0;
+#X connect 2 0 0 0;
 #X restore 6 144 pd presets;
