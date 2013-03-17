@@ -167,8 +167,8 @@
 #X msg 24 100 0 \, \$1 \$2;
 #X msg 160 202 \$1;
 #X text 188 205 <- avoid DC by init to last sample;
-#X obj 160 37 r click2;
-#X obj 24 161 tabread~ click2;
+#X obj 24 161 tabread~ \$1.click;
+#X obj 160 37 r \$1.click;
 #X connect 0 0 9 0;
 #X connect 1 0 10 0;
 #X connect 2 0 3 0;
@@ -176,7 +176,7 @@
 #X connect 4 0 5 0;
 #X connect 5 0 6 1;
 #X connect 6 0 11 1;
-#X connect 7 0 17 0;
+#X connect 7 0 16 0;
 #X connect 9 0 12 0;
 #X connect 10 0 11 0;
 #X connect 10 1 6 0;
@@ -185,8 +185,8 @@
 #X connect 12 0 13 0;
 #X connect 13 0 7 0;
 #X connect 14 0 7 0;
-#X connect 16 0 1 0;
-#X connect 17 0 8 0;
+#X connect 16 0 8 0;
+#X connect 17 0 1 0;
 #X restore 29 204 pd play.click;
 #X connect 0 0 7 0;
 #X connect 1 0 3 0;
