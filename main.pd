@@ -12,7 +12,7 @@ rolemax 7 \; individualmin 0 \; individualmax 63 \; pitch 1 \; gemeinsam
 #X obj 168 17 hsl 128 20 10 10000 1 0 gemeinsam gemeinsam gemeinsam
 20 10 0 14 -204786 -1 -1 8467 1;
 #X obj 305 17 hsl 128 20 10 10000 1 0 individuell individuell individuell
-20 10 0 14 -204786 -1 -1 3823 1;
+20 10 0 14 -204786 -1 -1 0 1;
 #X obj 60 18 tgl 20 0 mitmachen \$0.bli mitmachen 25 10 0 14 -204786
 -1 -1 1 1;
 #X obj 175 63 r gemeinsam;
@@ -40,7 +40,7 @@ rolemax 7 \; individualmin 0 \; individualmax 63 \; pitch 1 \; gemeinsam
 #X obj 135 228 nbx 5 14 0 63 0 0 individualmin individualmin individualmin
 0 -8 0 10 -262144 -1 -1 0 256;
 #X obj 223 230 nbx 5 14 0 63 0 0 individualmax individualmax individualmax
-0 -8 0 10 -262144 -1 -1 63 256;
+0 -8 0 10 -262144 -1 -1 27 256;
 #X floatatom 447 88 5 0 0 0 - - -;
 #X floatatom 304 111 5 0 0 0 - - -;
 #X connect 3 0 4 0;
@@ -51,7 +51,7 @@ rolemax 7 \; individualmin 0 \; individualmax 63 \; pitch 1 \; gemeinsam
 #X connect 23 0 10 0;
 #X restore 9 79 pd Menge;
 #X obj 11 334 master.mixer \$0 1;
-#N canvas 220 44 586 546 click_forms 1;
+#N canvas 220 44 586 546 click_forms 0;
 #N canvas 0 50 450 250 (subpatch) 0;
 #X array click 30 float 1;
 #A 0 2.5785e-06 0.212134 0.3 0.212132 3.99846e-08 -0.212132 -0.3 -0.212131
@@ -67,7 +67,7 @@ rolemax 7 \; individualmin 0 \; individualmax 63 \; pitch 1 \; gemeinsam
 #X obj 326 336 tabwrite~ click;
 #X obj 326 253 t b b a;
 #X obj 329 184 hsl 128 15 0 0.83 0 0 empty empty empty -2 -8 0 10 -204786
--1 -1 0 0;
+-1 -1 12700 0;
 #X msg 325 99 const 0 \, 0 0.3;
 #X obj 385 252 s click;
 #X msg 385 228 const 0 \, 0 0.3;
