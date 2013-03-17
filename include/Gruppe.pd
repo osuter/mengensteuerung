@@ -1,0 +1,9 @@
+#N canvas 353 106 465 269 10;
+#X obj 17 13 einzelneR \$1 0 1;
+#X obj 49 38 einzelneR \$1 1 2;
+#X obj 88 62 einzelneR \$1 2 3;
+#X obj 107 91 einzelneR \$1 3 4;
+#X obj 185 149 einzelneR \$1 4 5;
+#X obj 269 198 einzelneR \$1 6 7;
+#X obj 308 226 einzelneR \$1 7 8;
+#X obj 233 170 einzelneR \$1 5 6;

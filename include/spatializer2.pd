@@ -1,0 +1,64 @@
+#N canvas 489 141 511 371 10;
+#X text 27 4 x0;
+#X text 227 1 x10;
+#X text 13 27 y0;
+#X text 6 215 y10;
+#X obj 29 339 s~ \$0.source;
+#X obj 294 23 r \$1.coords;
+#X obj 31 31 cnv 15 198 198 empty empty empty 30 6 0 10 -253822 -66577
+0;
+#X obj 34 221 speaker.at.pos \$0 1 0 10;
+#X obj 127 139 cnv 6 6 6 empty \$0.pointer empty 20 12 0 14 -258113
+-66577 0;
+#X obj 352 137 s \$0.pointer;
+#X msg 352 114 pos \$1 \$2;
+#X obj 352 48 unpack f f;
+#X obj 352 92 pack f f;
+#X obj 352 70 + 26;
+#X obj 409 69 + 25;
+#X obj 294 222 s \$0.source.pos;
+#X obj 29 256 inlet~;
+#X obj 294 156 unpack f f;
+#X obj 294 200 pack f f;
+#X obj 294 178 / 20;
+#X obj 351 177 / 20;
+#X obj 34 34 speaker.at.pos \$0 3 0 0;
+#X obj 34 127 speaker.at.pos \$0 2 0 5;
+#X obj 124 34 speaker.at.pos \$0 4 5 0;
+#X obj 217 34 speaker.at.pos \$0 5 10 0;
+#X obj 217 127 speaker.at.pos \$0 6 10 5;
+#X obj 217 221 speaker.at.pos \$0 7 10 10;
+#X obj 124 221 speaker.at.pos \$0 8 5 10;
+#X obj 230 32 vsl 10 95 0 1 0 0 \$0.level \$0.level.r empty 0 -9 0
+10 -262144 -162280 -1 9400 1;
+#X obj 230 132 vsl 10 95 0.1 10 1 0 \$0.scale \$0.scale.r empty 0 -9
+0 10 -262144 -162280 -1 4700 1;
+#X obj 292 254 loadbang;
+#X obj 29 317 *~;
+#X obj 75 267 r \$0.level;
+#X msg 75 290 \$1 20;
+#X obj 75 312 line~;
+#X msg 292 298 \; \$1.level.r 1 \; \$1.scale.r 1 \; \$2.coords 100
+100 \;;
+#X obj 292 276 list append \$0 \$1;
+#X connect 5 0 11 0;
+#X connect 5 0 17 0;
+#X connect 10 0 9 0;
+#X connect 11 0 13 0;
+#X connect 11 1 14 0;
+#X connect 12 0 10 0;
+#X connect 13 0 12 0;
+#X connect 14 0 12 1;
+#X connect 16 0 31 0;
+#X connect 17 0 19 0;
+#X connect 17 1 20 0;
+#X connect 18 0 15 0;
+#X connect 19 0 18 0;
+#X connect 20 0 18 1;
+#X connect 30 0 36 0;
+#X connect 31 0 4 0;
+#X connect 32 0 33 0;
+#X connect 33 0 34 0;
+#X connect 34 0 31 1;
+#X connect 36 0 35 0;
+#X coords 0 -1 1 1 210 214 1 30 16;
