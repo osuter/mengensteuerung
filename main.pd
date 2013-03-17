@@ -8,13 +8,13 @@ rolemax 7 \; individualmin 0 \; individualmax 63 \; pitch 1 \; gemeinsam
 1000 \; individuell 80 \; click resize 30 \;;
 #X connect 0 0 2 0;
 #X restore 8 14 pd INIT;
-#N canvas 220 44 583 546 Menge 1;
+#N canvas 220 44 583 546 Menge 0;
 #X obj 168 17 hsl 128 20 10 10000 1 0 gemeinsam gemeinsam gemeinsam
 20 10 0 14 -204786 -1 -1 8467 1;
 #X obj 305 17 hsl 128 20 10 10000 1 0 individuell individuell individuell
-20 10 0 14 -204786 -1 -1 0 1;
+20 10 0 14 -204786 -1 -1 3823 1;
 #X obj 60 18 tgl 20 0 mitmachen \$0.bli mitmachen 25 10 0 14 -204786
--1 -1 1 1;
+-1 -1 0 1;
 #X obj 175 63 r gemeinsam;
 #X floatatom 175 85 5 0 0 0 - - -;
 #X floatatom 311 90 5 0 0 0 - - -;
@@ -30,6 +30,12 @@ rolemax 7 \; individualmin 0 \; individualmax 63 \; pitch 1 \; gemeinsam
 -1 -1 0;
 #X obj 363 160 hradio 15 1 0 8 rolemax rolemax rolemax 0 -8 0 10 -262144
 -1 -1 7;
+#X obj 135 228 nbx 5 14 0 63 0 0 individualmin individualmin individualmin
+0 -8 0 10 -262144 -1 -1 0 256;
+#X obj 223 230 nbx 5 14 0 63 0 0 individualmax individualmax individualmax
+0 -8 0 10 -262144 -1 -1 63 256;
+#X floatatom 447 88 5 0 0 0 - - -;
+#X floatatom 304 111 5 0 0 0 - - -;
 #X obj 265 289 Gruppe 1;
 #X obj 321 289 Gruppe 2;
 #X obj 377 288 Gruppe 3;
@@ -37,27 +43,19 @@ rolemax 7 \; individualmin 0 \; individualmax 63 \; pitch 1 \; gemeinsam
 #X obj 265 312 Gruppe 5;
 #X obj 321 312 Gruppe 6;
 #X obj 377 311 Gruppe 7;
-#X obj 135 228 nbx 5 14 0 63 0 0 individualmin individualmin individualmin
-0 -8 0 10 -262144 -1 -1 0 256;
-#X obj 223 230 nbx 5 14 0 63 0 0 individualmax individualmax individualmax
-0 -8 0 10 -262144 -1 -1 27 256;
-#X floatatom 447 88 5 0 0 0 - - -;
-#X floatatom 304 111 5 0 0 0 - - -;
 #X connect 3 0 4 0;
 #X connect 6 0 5 0;
-#X connect 22 0 11 0;
-#X connect 22 0 12 0;
-#X connect 23 0 9 0;
-#X connect 23 0 10 0;
+#X connect 15 0 11 0;
+#X connect 15 0 12 0;
+#X connect 16 0 9 0;
+#X connect 16 0 10 0;
 #X restore 9 79 pd Menge;
 #X obj 11 334 master.mixer \$0 1;
 #N canvas 220 44 586 546 click_forms 0;
 #N canvas 0 50 450 250 (subpatch) 0;
 #X array click 30 float 1;
-#A 0 2.5785e-06 0.212134 0.3 0.212132 3.99846e-08 -0.212132 -0.3 -0.212131
-2.54383e-06 0.212134 0.3 0.212132 7.44355e-08 -0.212132 -0.3 -0.212131
-2.50938e-06 0.212134 0.3 0.212132 1.09106e-07 -0.212132 -0.3 -0.212131
-2.47471e-06 0.212134 0.3 0.212132 1.43776e-07 -0.212132;
+#A 0 0.3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+;
 #X coords 0 1 29 -1 240 240 1 0 0;
 #X restore 22 31 graph;
 #X obj 325 123 s click;
@@ -67,7 +65,7 @@ rolemax 7 \; individualmin 0 \; individualmax 63 \; pitch 1 \; gemeinsam
 #X obj 326 336 tabwrite~ click;
 #X obj 326 253 t b b a;
 #X obj 329 184 hsl 128 15 0 0.83 0 0 empty empty empty -2 -8 0 10 -204786
--1 -1 12700 0;
+-1 -1 0 0;
 #X msg 325 99 const 0 \, 0 0.3;
 #X obj 385 252 s click;
 #X msg 385 228 const 0 \, 0 0.3;
@@ -88,7 +86,7 @@ rolemax 7 \; individualmin 0 \; individualmax 63 \; pitch 1 \; gemeinsam
 #X obj 174 508 tabwrite~ click;
 #X obj 201 485 *~ 0.3;
 #X obj 174 289 hradio 15 1 0 5 empty empty empty 0 -8 0 10 -204786
--1 -1 2;
+-1 -1 0;
 #X obj 174 353 t b a;
 #X obj 174 376 samplerate~;
 #X obj 174 331 + 4;
@@ -100,43 +98,23 @@ rolemax 7 \; individualmin 0 \; individualmax 63 \; pitch 1 \; gemeinsam
 #X obj 27 312 sel 0 1;
 #X msg 27 350 30;
 #X msg 56 352 60;
-#N canvas 548 128 278 297 avoid_dc 0;
-#X msg 25 95 30;
-#X obj 25 155 until;
-#X obj 25 181 f;
-#X obj 64 180 + 1;
-#X obj 25 129 t a b;
-#X msg 68 153 0;
-#X obj 25 228 tabread click;
-#X obj 25 251 tabwrite click2;
-#X obj 25 203 t a a;
-#X obj 25 50 loadbang;
-#X obj 25 72 metro 30;
-#X obj 21 14 table click2;
-#X obj 135 23 r click;
-#X obj 135 45 route resize;
-#X obj 135 67 + 1;
-#X msg 135 89 resize \$1;
-#X obj 135 111 s click2;
-#X connect 0 0 4 0;
-#X connect 1 0 2 0;
-#X connect 2 0 3 0;
-#X connect 2 0 8 0;
-#X connect 3 0 2 1;
-#X connect 4 0 1 0;
-#X connect 4 1 5 0;
-#X connect 5 0 2 1;
-#X connect 6 0 7 0;
-#X connect 8 0 6 0;
-#X connect 8 1 7 1;
-#X connect 9 0 10 0;
-#X connect 10 0 0 0;
-#X connect 12 0 13 0;
-#X connect 13 0 14 0;
-#X connect 14 0 15 0;
-#X connect 15 0 16 0;
-#X restore 492 23 pd avoid_dc;
 #X text 258 289 sine;
+#X obj 324 13 tgl 18 0 0.click.copy 0.click.copy 0 5 9 0 11 -262130
+-1 -1 0 1;
+#X obj 342 13 tgl 18 0 1.click.copy 1.click.copy 1 5 9 0 11 -262130
+-1 -1 0 1;
+#X obj 360 13 tgl 18 0 2.click.copy 2.click.copy 2 5 9 0 11 -262130
+-1 -1 0 1;
+#X obj 378 13 tgl 18 0 3.click.copy 3.click.copy 3 5 9 0 11 -262130
+-1 -1 0 1;
+#X obj 396 13 tgl 18 0 4.click.copy 4.click.copy 4 5 9 0 11 -262130
+-1 -1 0 1;
+#X obj 414 13 tgl 18 0 5.click.copy 5.click.copy 5 5 9 0 11 -262130
+-1 -1 0 1;
+#X obj 432 13 tgl 18 0 6.click.copy 6.click.copy 6 5 9 0 11 -262130
+-1 -1 0 1;
+#X obj 450 13 tgl 18 0 7.click.copy 7.click.copy 7 5 9 0 11 -262130
+-1 -1 0 1;
 #X connect 2 0 8 0;
 #X connect 3 0 5 0;
 #X connect 4 0 3 0;
@@ -170,4 +148,21 @@ rolemax 7 \; individualmin 0 \; individualmax 63 \; pitch 1 \; gemeinsam
 #X connect 33 1 35 0;
 #X connect 34 0 25 0;
 #X connect 35 0 25 0;
-#X restore 9 114 pd click_forms;
+#X restore 9 113 pd click_forms;
+#N canvas 220 45 588 545 presets 0;
+#X obj 385 28 state.save.f gemeinsam;
+#X obj 385 52 state.save.f individuell;
+#X obj 385 77 state.save.f groupmin;
+#X obj 385 101 state.save.f groupmax;
+#X obj 385 127 state.save.f rolemin;
+#X obj 385 151 state.save.f rolemax;
+#X obj 385 177 state.save.f individualmin;
+#X obj 385 201 state.save.f individualmax;
+#X obj 53 86 s state_dump_req;
+#X obj 51 123 r state_dump_send;
+#X obj 70 41 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 51 145 print STATE;
+#X connect 9 0 11 0;
+#X connect 10 0 8 0;
+#X restore 6 144 pd presets;
