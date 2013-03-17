@@ -51,11 +51,14 @@ rolemax 7 \; individualmin 0 \; individualmax 63 \; pitch 1 \; gemeinsam
 #X connect 16 0 10 0;
 #X restore 9 79 pd Menge;
 #X obj 11 334 master.mixer \$0 1;
-#N canvas 220 44 738 540 click_forms 0;
+#N canvas 220 44 741 546 click_forms 0;
 #N canvas 0 50 450 250 (subpatch) 0;
 #X array click 30 float 1;
-#A 0 0.3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-;
+#A 0 0.3 0.109795 0.0401833 0.0147065 0.00538234 0.00196985 0.000720934
+0.00026385 9.65651e-05 3.53413e-05 1.29344e-05 4.73377e-06 1.73249e-06
+6.34063e-07 2.32057e-07 8.49292e-08 3.10827e-08 1.13758e-08 4.16336e-09
+1.52372e-09 5.57659e-10 2.04094e-10 7.46953e-11 2.73373e-11 1.0005e-11
+3.66168e-12 1.34012e-12 4.90462e-13 1.79501e-13 6.56947e-14;
 #X coords 0 1 29 -1 240 240 1 0 0;
 #X restore 22 31 graph;
 #X obj 325 123 s click;
@@ -65,7 +68,7 @@ rolemax 7 \; individualmin 0 \; individualmax 63 \; pitch 1 \; gemeinsam
 #X obj 326 336 tabwrite~ click;
 #X obj 326 253 t b b a;
 #X obj 329 184 hsl 128 15 0 0.83 0 0 empty empty empty -2 -8 0 10 -204786
--1 -1 7300 0;
+-1 -1 0 0;
 #X msg 325 99 const 0 \, 0 0.3;
 #X obj 385 252 s click;
 #X msg 385 228 const 0 \, 0 0.3;
@@ -81,12 +84,12 @@ rolemax 7 \; individualmin 0 \; individualmax 63 \; pitch 1 \; gemeinsam
 #X obj 355 432 *~ 0.3;
 #X text 350 383 random;
 #X obj 27 289 hradio 15 1 0 2 empty empty empty 0 -8 0 10 -204786 -1
--1 1;
+-1 0;
 #X text 68 285 arc;
 #X obj 174 508 tabwrite~ click;
 #X obj 201 485 *~ 0.3;
 #X obj 174 289 hradio 15 1 0 5 empty empty empty 0 -8 0 10 -204786
--1 -1 2;
+-1 -1 0;
 #X obj 174 353 t b a;
 #X obj 174 376 samplerate~;
 #X obj 174 331 + 4;
@@ -119,7 +122,7 @@ rolemax 7 \; individualmin 0 \; individualmax 63 \; pitch 1 \; gemeinsam
 1;
 #X text 568 27 send to group(s);
 #X obj 527 99 hradio 18 1 0 8 click.restore click.restore empty 0 -8
-0 10 -261682 -1 -1 0;
+0 10 -261682 -1 -1 1;
 #N canvas 646 370 259 202 get.from.group 0;
 #X obj 32 16 r click.restore;
 #X obj 32 152 tabwrite~ click;
