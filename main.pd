@@ -11,13 +11,12 @@ rolemax 7 \; individualmin 0 \; individualmax 63 \; pitch 1 \; gemeinsam
 #N canvas 220 44 583 546 Menge 0;
 #X obj 168 17 hsl 128 20 10 10000 1 0 gemeinsam gemeinsam gemeinsam
 20 10 0 14 -204786 -1 -1 9167 1;
-#X obj 334 16 hsl 128 20 0 1 0 1 individuell individuell individuell
-20 10 0 14 -204786 -1 -1 12700 1;
+#X obj 304 17 hsl 128 20 0 1 0 1 individuell individuell individuell
+20 10 0 14 -204786 -1 -1 6800 1;
 #X obj 60 18 tgl 20 0 mitmachen \$0.bli mitmachen 25 10 0 14 -204786
 -1 -1 0 1;
 #X obj 213 88 r gemeinsam;
-#X floatatom 313 90 5 0 0 0 - - -;
-#X obj 313 67 r individuell;
+#X floatatom 436 42 5 0 0 0 - verteilung -;
 #X obj 206 379 Gruppe 0;
 #X obj 63 212 nbx 5 14 -1e+37 1e+37 0 0 pitch pitch pitch 0 -8 0 10
 -262144 -1 -1 1 256;
@@ -46,15 +45,18 @@ rolemax 7 \; individualmin 0 \; individualmax 63 \; pitch 1 \; gemeinsam
 #X obj 156 111 metro 1000;
 #X obj 156 133 s takt;
 #X floatatom 226 111 5 0 0 0 - - -;
-#X connect 3 0 24 1;
-#X connect 3 0 26 0;
-#X connect 5 0 4 0;
-#X connect 14 0 10 0;
-#X connect 14 0 11 0;
-#X connect 15 0 8 0;
-#X connect 15 0 9 0;
+#X obj 440 17 hsl 128 20 1 10 0 1 verteilung verteilung verteilung
+20 10 0 14 -204786 -1 -1 0 1;
+#X floatatom 300 44 5 0 0 0 - individuell -;
+#X floatatom 166 46 10 0 0 0 - - -;
+#X connect 3 0 23 1;
+#X connect 3 0 25 0;
+#X connect 13 0 9 0;
+#X connect 13 0 10 0;
+#X connect 14 0 7 0;
+#X connect 14 0 8 0;
+#X connect 22 0 23 0;
 #X connect 23 0 24 0;
-#X connect 24 0 25 0;
 #X restore 9 79 pd Menge;
 #X obj 11 334 master.mixer \$0 1;
 #N canvas 220 44 741 546 click_forms 0;
