@@ -8,11 +8,11 @@ rolemax 7 \; individualmin 0 \; individualmax 63 \; pitch 1 \; gemeinsam
 1000 \; individuell 80 \; click resize 30 \;;
 #X connect 0 0 2 0;
 #X restore 8 14 pd INIT;
-#N canvas 220 44 583 546 Menge 0;
-#X obj 168 17 hsl 128 20 10 10000 1 0 gemeinsam gemeinsam gemeinsam
-20 10 0 14 -204786 -1 -1 9167 1;
-#X obj 304 17 hsl 128 20 0 1 0 1 individuell individuell individuell
-20 10 0 14 -204786 -1 -1 6800 1;
+#N canvas 220 44 633 584 Menge 0;
+#X obj 168 17 hsl 128 20 10 10000 1 0 gemeinsam gemeinsam intervall
+20 10 0 11 -204786 -1 -1 11067 1;
+#X obj 304 17 hsl 128 20 0 1 0 1 individuell individuell random_range
+20 10 0 11 -204786 -1 -1 12700 1;
 #X obj 60 18 tgl 20 0 mitmachen \$0.bli mitmachen 25 10 0 14 -204786
 -1 -1 0 1;
 #X obj 213 88 r gemeinsam;
@@ -45,8 +45,8 @@ rolemax 7 \; individualmin 0 \; individualmax 63 \; pitch 1 \; gemeinsam
 #X obj 156 111 metro 1000;
 #X obj 156 133 s takt;
 #X floatatom 226 111 5 0 0 0 - - -;
-#X obj 440 17 hsl 128 20 1 10 0 1 verteilung verteilung verteilung
-20 10 0 14 -204786 -1 -1 0 1;
+#X obj 440 17 hsl 129 20 0.25 4 1 0 verteilung verteilung random_verteilung
+10 10 0 11 -204786 -1 -1 9700 1;
 #X floatatom 300 44 5 0 0 0 - individuell -;
 #X floatatom 166 46 10 0 0 0 - - -;
 #X connect 3 0 23 1;
@@ -59,11 +59,11 @@ rolemax 7 \; individualmin 0 \; individualmax 63 \; pitch 1 \; gemeinsam
 #X connect 23 0 24 0;
 #X restore 9 79 pd Menge;
 #X obj 11 334 master.mixer \$0 1;
-#N canvas 220 44 741 546 click_forms 0;
+#N canvas 507 152 741 546 click_forms 0;
 #N canvas 0 50 450 250 (subpatch) 0;
 #X array click 30 float 1;
-#A 0 0.3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-;
+#A 0 0.491666 0.183333 0.0749999 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0;
 #X coords 0 1 29 -1 240 240 1 0 0;
 #X restore 22 31 graph;
 #X obj 325 123 s click;
@@ -127,7 +127,7 @@ rolemax 7 \; individualmin 0 \; individualmax 63 \; pitch 1 \; gemeinsam
 1;
 #X text 568 27 send to group(s);
 #X obj 527 99 hradio 18 1 0 8 click.restore click.restore empty 0 -8
-0 10 -261682 -1 -1 0;
+0 10 -261682 -1 -1 7;
 #N canvas 646 370 259 202 get.from.group 0;
 #X obj 32 16 r click.restore;
 #X obj 32 152 tabwrite~ click;
