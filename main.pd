@@ -10,54 +10,58 @@ rolemax 7 \; individualmin 0 \; individualmax 63 \; pitch 1 \; gemeinsam
 #X restore 8 14 pd INIT;
 #N canvas 220 44 583 546 Menge 0;
 #X obj 168 17 hsl 128 20 10 10000 1 0 gemeinsam gemeinsam gemeinsam
-20 10 0 14 -204786 -1 -1 8467 1;
-#X obj 305 17 hsl 128 20 10 10000 1 0 individuell individuell individuell
-20 10 0 14 -204786 -1 -1 5323 1;
+20 10 0 14 -204786 -1 -1 7700 1;
+#X obj 334 16 hsl 128 20 0 1 0 1 individuell individuell individuell
+20 10 0 14 -204786 -1 -1 9400 0;
 #X obj 60 18 tgl 20 0 mitmachen \$0.bli mitmachen 25 10 0 14 -204786
--1 -1 1 1;
-#X obj 175 63 r gemeinsam;
-#X floatatom 175 85 5 0 0 0 - - -;
-#X floatatom 311 90 5 0 0 0 - - -;
+-1 -1 0 1;
+#X obj 213 88 r gemeinsam;
+#X floatatom 313 90 5 0 0 0 - - -;
 #X obj 313 67 r individuell;
-#X obj 206 289 Gruppe 0;
-#X obj 63 122 nbx 5 14 -1e+37 1e+37 0 0 pitch pitch pitch 0 -8 0 10
+#X obj 206 379 Gruppe 0;
+#X obj 63 212 nbx 5 14 -1e+37 1e+37 0 0 pitch pitch pitch 0 -8 0 10
 -262144 -1 -1 1 256;
-#X obj 160 130 hradio 15 1 0 8 groupmin groupmin groupmin 0 -8 0 10
+#X obj 160 220 hradio 15 1 0 8 groupmin groupmin groupmin 0 -8 0 10
 -262144 -1 -1 0;
-#X obj 160 161 hradio 15 1 0 8 groupmax groupmax groupmax 0 -8 0 10
+#X obj 160 251 hradio 15 1 0 8 groupmax groupmax groupmax 0 -8 0 10
 -262144 -1 -1 7;
-#X obj 363 129 hradio 15 1 0 8 rolemin rolemin rolemin 0 -8 0 10 -262144
+#X obj 363 219 hradio 15 1 0 8 rolemin rolemin rolemin 0 -8 0 10 -262144
 -1 -1 0;
-#X obj 363 160 hradio 15 1 0 8 rolemax rolemax rolemax 0 -8 0 10 -262144
+#X obj 363 250 hradio 15 1 0 8 rolemax rolemax rolemax 0 -8 0 10 -262144
 -1 -1 7;
-#X obj 135 228 nbx 5 14 0 63 0 0 individualmin individualmin individualmin
+#X obj 135 318 nbx 5 14 0 63 0 0 individualmin individualmin individualmin
 0 -8 0 10 -262144 -1 -1 0 256;
-#X obj 223 230 nbx 5 14 0 63 0 0 individualmax individualmax individualmax
+#X obj 223 320 nbx 5 14 0 63 0 0 individualmax individualmax individualmax
 0 -8 0 10 -262144 -1 -1 63 256;
-#X floatatom 447 88 5 0 0 0 - - -;
+#X floatatom 447 178 5 0 0 0 - - -;
 #X floatatom 304 111 5 0 0 0 - - -;
-#X obj 265 289 Gruppe 1;
-#X obj 321 289 Gruppe 2;
-#X obj 377 288 Gruppe 3;
-#X obj 206 312 Gruppe 4;
-#X obj 265 312 Gruppe 5;
-#X obj 321 312 Gruppe 6;
-#X obj 377 311 Gruppe 7;
-#X connect 3 0 4 0;
-#X connect 6 0 5 0;
-#X connect 15 0 11 0;
-#X connect 15 0 12 0;
-#X connect 16 0 9 0;
-#X connect 16 0 10 0;
+#X obj 265 379 Gruppe 1;
+#X obj 321 379 Gruppe 2;
+#X obj 377 378 Gruppe 3;
+#X obj 206 402 Gruppe 4;
+#X obj 265 402 Gruppe 5;
+#X obj 321 402 Gruppe 6;
+#X obj 377 401 Gruppe 7;
+#X obj 156 69 r mitmachen;
+#X obj 156 111 metro 1000;
+#X obj 156 133 s takt;
+#X floatatom 226 111 5 0 0 0 - - -;
+#X connect 3 0 24 1;
+#X connect 3 0 26 0;
+#X connect 5 0 4 0;
+#X connect 14 0 10 0;
+#X connect 14 0 11 0;
+#X connect 15 0 8 0;
+#X connect 15 0 9 0;
+#X connect 23 0 24 0;
+#X connect 24 0 25 0;
 #X restore 9 79 pd Menge;
 #X obj 11 334 master.mixer \$0 1;
 #N canvas 220 44 741 546 click_forms 0;
 #N canvas 0 50 450 250 (subpatch) 0;
 #X array click 30 float 1;
-#A 0 2.5785e-06 0.212134 0.3 0.212132 3.99846e-08 -0.212132 -0.3 -0.212131
-2.54383e-06 0.212134 0.266667 0.258333 0.433333 0.7 0.841666 -0.212131
-2.50938e-06 0.212134 0.3 0.212132 1.09106e-07 -0.212132 -0.65 -0.212131
-2.47471e-06 0.212134 0.3 0.212132 1.43776e-07 -0.212132;
+#A 0 0.3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+;
 #X coords 0 1 29 -1 240 240 1 0 0;
 #X restore 22 31 graph;
 #X obj 325 123 s click;
@@ -88,7 +92,7 @@ rolemax 7 \; individualmin 0 \; individualmax 63 \; pitch 1 \; gemeinsam
 #X obj 174 508 tabwrite~ click;
 #X obj 201 485 *~ 0.3;
 #X obj 174 289 hradio 15 1 0 5 empty empty empty 0 -8 0 10 -204786
--1 -1 2;
+-1 -1 0;
 #X obj 174 353 t b a;
 #X obj 174 376 samplerate~;
 #X obj 174 331 + 4;
@@ -121,7 +125,7 @@ rolemax 7 \; individualmin 0 \; individualmax 63 \; pitch 1 \; gemeinsam
 1;
 #X text 568 27 send to group(s);
 #X obj 527 99 hradio 18 1 0 8 click.restore click.restore empty 0 -8
-0 10 -261682 -1 -1 7;
+0 10 -261682 -1 -1 0;
 #N canvas 646 370 259 202 get.from.group 0;
 #X obj 32 16 r click.restore;
 #X obj 32 152 tabwrite~ click;
