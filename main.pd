@@ -10,9 +10,9 @@ rolemax 7 \; individualmin 0 \; individualmax 63 \; pitch 1 \; gemeinsam
 #X restore 8 14 pd INIT;
 #N canvas 220 44 583 546 Menge 0;
 #X obj 168 17 hsl 128 20 10 10000 1 0 gemeinsam gemeinsam gemeinsam
-20 10 0 14 -204786 -1 -1 7700 1;
+20 10 0 14 -204786 -1 -1 9167 1;
 #X obj 334 16 hsl 128 20 0 1 0 1 individuell individuell individuell
-20 10 0 14 -204786 -1 -1 9400 0;
+20 10 0 14 -204786 -1 -1 12700 1;
 #X obj 60 18 tgl 20 0 mitmachen \$0.bli mitmachen 25 10 0 14 -204786
 -1 -1 0 1;
 #X obj 213 88 r gemeinsam;
