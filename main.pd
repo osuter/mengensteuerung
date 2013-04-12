@@ -8,14 +8,14 @@ rolemax 7 \; individualmin 0 \; individualmax 63 \; pitch 1 \; gemeinsam
 1000 \; individuell 80 \; click resize 30 \;;
 #X connect 0 0 2 0;
 #X restore 8 14 pd INIT;
-#N canvas 220 44 633 584 Menge 0;
+#N canvas 220 42 633 584 Menge 0;
 #X obj 168 17 hsl 128 20 10 10000 1 0 gemeinsam gemeinsam intervall
-20 10 0 11 -204786 -1 -1 11067 1;
+20 10 0 11 -204786 -1 -1 5400 1;
 #X obj 304 17 hsl 128 20 0 1 0 1 individuell individuell random_range
-20 10 0 11 -204786 -1 -1 12700 1;
+20 10 0 11 -204786 -1 -1 3200 1;
 #X obj 60 18 tgl 20 0 mitmachen \$0.bli mitmachen 25 10 0 14 -204786
 -1 -1 0 1;
-#X obj 213 88 r gemeinsam;
+#X obj 191 106 r gemeinsam;
 #X floatatom 436 42 5 0 0 0 - verteilung -;
 #X obj 206 379 Gruppe 0;
 #X obj 63 212 nbx 5 14 -1e+37 1e+37 0 0 pitch pitch pitch 0 -8 0 10
@@ -33,7 +33,7 @@ rolemax 7 \; individualmin 0 \; individualmax 63 \; pitch 1 \; gemeinsam
 #X obj 223 320 nbx 5 14 0 63 0 0 individualmax individualmax individualmax
 0 -8 0 10 -262144 -1 -1 63 256;
 #X floatatom 447 178 5 0 0 0 - - -;
-#X floatatom 304 111 5 0 0 0 - - -;
+#X floatatom 238 154 5 0 0 0 - - -;
 #X obj 265 379 Gruppe 1;
 #X obj 321 379 Gruppe 2;
 #X obj 377 378 Gruppe 3;
@@ -41,16 +41,41 @@ rolemax 7 \; individualmin 0 \; individualmax 63 \; pitch 1 \; gemeinsam
 #X obj 265 402 Gruppe 5;
 #X obj 321 402 Gruppe 6;
 #X obj 377 401 Gruppe 7;
-#X obj 156 69 r mitmachen;
-#X obj 156 111 metro 1000;
-#X obj 156 133 s takt;
-#X floatatom 226 111 5 0 0 0 - - -;
+#X obj 134 87 r mitmachen;
+#X obj 134 129 metro 1000;
+#X obj 134 151 s takt;
 #X obj 440 17 hsl 129 20 0.25 4 1 0 verteilung verteilung random_verteilung
-10 10 0 11 -204786 -1 -1 9700 1;
+10 10 0 11 -204786 -1 -1 1109 1;
 #X floatatom 300 44 5 0 0 0 - individuell -;
-#X floatatom 166 46 10 0 0 0 - - -;
+#X floatatom 166 46 10 0 0 0 - gemeinsam -;
+#N canvas 630 104 525 278 midifader 0;
+#X obj 34 19 ctlin 71 1;
+#X floatatom 34 44 5 0 0 0 - - -;
+#X floatatom 205 58 5 0 0 0 - - -;
+#X obj 205 20 ctlin 74 1;
+#X floatatom 349 60 5 0 0 0 - - -;
+#X obj 349 22 ctlin 84 1;
+#X obj 34 84 / 127;
+#X obj 205 90 / 127;
+#X obj 349 89 / 127;
+#X obj 34 118 rh_scalelog 10 10000;
+#X obj 34 161 s gemeinsam;
+#X obj 205 161 s individuell;
+#X obj 349 158 s verteilung;
+#X obj 349 122 rh_scalelog 0.25 4;
+#X connect 0 0 1 0;
+#X connect 1 0 6 0;
+#X connect 2 0 7 0;
+#X connect 3 0 2 0;
+#X connect 4 0 8 0;
+#X connect 5 0 4 0;
+#X connect 6 0 9 0;
+#X connect 7 0 11 0;
+#X connect 8 0 13 0;
+#X connect 9 0 10 0;
+#X connect 13 0 12 0;
+#X restore 48 380 pd midifader;
 #X connect 3 0 23 1;
-#X connect 3 0 25 0;
 #X connect 13 0 9 0;
 #X connect 13 0 10 0;
 #X connect 14 0 7 0;
@@ -62,8 +87,8 @@ rolemax 7 \; individualmin 0 \; individualmax 63 \; pitch 1 \; gemeinsam
 #N canvas 507 152 741 546 click_forms 0;
 #N canvas 0 50 450 250 (subpatch) 0;
 #X array click 30 float 1;
-#A 0 0.491666 0.183333 0.0749999 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-0 0 0 0 0 0 0 0 0 0;
+#A 0 0.3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+;
 #X coords 0 1 29 -1 240 240 1 0 0;
 #X restore 22 31 graph;
 #X obj 325 123 s click;
@@ -127,7 +152,7 @@ rolemax 7 \; individualmin 0 \; individualmax 63 \; pitch 1 \; gemeinsam
 1;
 #X text 568 27 send to group(s);
 #X obj 527 99 hradio 18 1 0 8 click.restore click.restore empty 0 -8
-0 10 -261682 -1 -1 7;
+0 10 -261682 -1 -1 0;
 #N canvas 646 370 259 202 get.from.group 0;
 #X obj 32 16 r click.restore;
 #X obj 32 152 tabwrite~ click;
