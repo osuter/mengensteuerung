@@ -10,9 +10,9 @@ rolemax 7 \; individualmin 0 \; individualmax 63 \; pitch 1 \; gemeinsam
 #X restore 8 14 pd INIT;
 #N canvas 220 42 633 584 Menge 0;
 #X obj 168 17 hsl 128 20 10 10000 1 0 gemeinsam gemeinsam intervall
-20 10 0 11 -204786 -1 -1 5400 1;
+20 10 0 11 -204786 -1 -1 11600 1;
 #X obj 304 17 hsl 128 20 0 1 0 1 individuell individuell random_range
-20 10 0 11 -204786 -1 -1 3200 1;
+20 10 0 11 -204786 -1 -1 7700 1;
 #X obj 60 18 tgl 20 0 mitmachen \$0.bli mitmachen 25 10 0 14 -204786
 -1 -1 0 1;
 #X obj 191 106 r gemeinsam;
@@ -29,7 +29,7 @@ rolemax 7 \; individualmin 0 \; individualmax 63 \; pitch 1 \; gemeinsam
 #X obj 363 250 hradio 15 1 0 8 rolemax rolemax rolemax 0 -8 0 10 -262144
 -1 -1 7;
 #X obj 135 318 nbx 5 14 0 63 0 0 individualmin individualmin individualmin
-0 -8 0 10 -262144 -1 -1 0 256;
+0 -8 0 10 -262144 -1 -1 36.2126 256;
 #X obj 223 320 nbx 5 14 0 63 0 0 individualmax individualmax individualmax
 0 -8 0 10 -262144 -1 -1 63 256;
 #X floatatom 447 178 5 0 0 0 - - -;
@@ -45,10 +45,10 @@ rolemax 7 \; individualmin 0 \; individualmax 63 \; pitch 1 \; gemeinsam
 #X obj 134 129 metro 1000;
 #X obj 134 151 s takt;
 #X obj 440 17 hsl 129 20 0.25 4 1 0 verteilung verteilung random_verteilung
-10 10 0 11 -204786 -1 -1 1109 1;
+10 10 0 11 -204786 -1 -1 4939 1;
 #X floatatom 300 44 5 0 0 0 - individuell -;
 #X floatatom 166 46 10 0 0 0 - gemeinsam -;
-#N canvas 630 104 525 278 midifader 0;
+#N canvas 630 104 527 486 midifader 0;
 #X obj 34 19 ctlin 71 1;
 #X floatatom 34 44 5 0 0 0 - - -;
 #X floatatom 205 58 5 0 0 0 - - -;
@@ -63,6 +63,16 @@ rolemax 7 \; individualmin 0 \; individualmax 63 \; pitch 1 \; gemeinsam
 #X obj 205 161 s individuell;
 #X obj 349 158 s verteilung;
 #X obj 349 122 rh_scalelog 0.25 4;
+#X floatatom 207 252 5 0 0 0 - - -;
+#X obj 207 284 / 127;
+#X obj 207 369 s individualmax;
+#X obj 207 322 * 63;
+#X obj 207 227 ctlin 93 1;
+#X floatatom 40 246 5 0 0 0 - - -;
+#X obj 40 278 / 127;
+#X obj 40 316 * 63;
+#X obj 40 221 ctlin 91 1;
+#X obj 40 363 s individualmin;
 #X connect 0 0 1 0;
 #X connect 1 0 6 0;
 #X connect 2 0 7 0;
@@ -74,6 +84,14 @@ rolemax 7 \; individualmin 0 \; individualmax 63 \; pitch 1 \; gemeinsam
 #X connect 8 0 13 0;
 #X connect 9 0 10 0;
 #X connect 13 0 12 0;
+#X connect 14 0 15 0;
+#X connect 15 0 17 0;
+#X connect 17 0 16 0;
+#X connect 18 0 14 0;
+#X connect 19 0 20 0;
+#X connect 20 0 21 0;
+#X connect 21 0 23 0;
+#X connect 22 0 19 0;
 #X restore 48 380 pd midifader;
 #X connect 3 0 23 1;
 #X connect 13 0 9 0;
@@ -87,8 +105,11 @@ rolemax 7 \; individualmin 0 \; individualmax 63 \; pitch 1 \; gemeinsam
 #N canvas 507 152 741 546 click_forms 0;
 #N canvas 0 50 450 250 (subpatch) 0;
 #X array click 30 float 1;
-#A 0 0.3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-;
+#A 0 2.5785e-06 0.259805 0.259803 7.87899e-08 -0.259804 -0.259802 2.46624e-06
+0.259805 0.259803 1.91107e-07 -0.259804 -0.259802 2.35392e-06 0.259805
+0.259804 3.03425e-07 -0.259804 -0.259803 2.2416e-06 0.259805 0.259804
+4.15742e-07 -0.259804 -0.259803 2.12928e-06 0.259805 0.259804 5.28339e-07
+-0.259803 -0.259803;
 #X coords 0 1 29 -1 240 240 1 0 0;
 #X restore 22 31 graph;
 #X obj 325 123 s click;
@@ -119,7 +140,7 @@ rolemax 7 \; individualmin 0 \; individualmax 63 \; pitch 1 \; gemeinsam
 #X obj 174 508 tabwrite~ click;
 #X obj 201 485 *~ 0.3;
 #X obj 174 289 hradio 15 1 0 5 empty empty empty 0 -8 0 10 -204786
--1 -1 0;
+-1 -1 1;
 #X obj 174 353 t b a;
 #X obj 174 376 samplerate~;
 #X obj 174 331 + 4;
@@ -135,11 +156,11 @@ rolemax 7 \; individualmin 0 \; individualmax 63 \; pitch 1 \; gemeinsam
 #X obj 526 61 tgl 18 0 0.click.copy \$0.bli 0 5 9 0 11 -262130 -1 -1
 0 1;
 #X obj 544 61 tgl 18 0 1.click.copy \$0.bli 1 5 9 0 11 -262130 -1 -1
-0 1;
+1 1;
 #X obj 562 61 tgl 18 0 2.click.copy \$0.bli 2 5 9 0 11 -262130 -1 -1
-0 1;
+1 1;
 #X obj 580 61 tgl 18 0 3.click.copy \$0.bli 3 5 9 0 11 -262130 -1 -1
-0 1;
+1 1;
 #X obj 598 61 tgl 18 0 4.click.copy \$0.bli 4 5 9 0 11 -262130 -1 -1
 0 1;
 #X obj 616 61 tgl 18 0 5.click.copy \$0.bli 5 5 9 0 11 -262130 -1 -1
