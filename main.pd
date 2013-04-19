@@ -1,6 +1,5 @@
 #N canvas 0 44 220 518 10;
 #X declare -path . -path include;
-#X declare -stdpath extra/moocow -stdlib extra/pdstring;
 #N canvas 220 44 453 328 INIT 0;
 #X obj 16 46 loadbang;
 #X obj 15 12 declare -path . -path include;
@@ -9,7 +8,7 @@ rolemax 7 \; individualmin 0 \; individualmax 63 \; pitch 1 \; gemeinsam
 1000 \; individuell 80 \; click resize 30 \;;
 #X connect 0 0 2 0;
 #X restore 8 14 pd INIT;
-#N canvas 220 44 631 546 Menge 0;
+#N canvas 220 44 631 546 Menge 1;
 #X obj 168 17 hsl 128 20 10 10000 1 0 gemeinsam gemeinsam intervall
 20 10 0 11 -204786 -1 -1 0 1;
 #X obj 304 17 hsl 128 20 0 1 0 1 individuell individuell random_range
@@ -75,15 +74,14 @@ rolemax 7 \; individualmin 0 \; individualmax 63 \; pitch 1 \; gemeinsam
 #X obj 40 221 ctlin 91 1;
 #X obj 40 363 s individualmin;
 #X obj 385 315 pduino/arduino;
-#X msg 385 289 open 32;
 #X obj 385 260 sel 1 0;
 #X msg 443 288 close;
-#X obj 385 233 tgl 20 0 empty empty empty 17 7 0 10 -4034 -1 -1 1 1
+#X obj 385 233 tgl 20 0 empty empty empty 17 7 0 10 -4034 -1 -1 0 1
 ;
-#X obj 385 211 loadbang;
 #X text 408 231 <- connect;
 #X obj 385 338 route analog;
 #X obj 385 364 route 0 1 2 3;
+#X msg 385 289 open 4;
 #X connect 0 0 1 0;
 #X connect 1 0 6 0;
 #X connect 2 0 7 0;
@@ -103,17 +101,16 @@ rolemax 7 \; individualmin 0 \; individualmax 63 \; pitch 1 \; gemeinsam
 #X connect 20 0 21 0;
 #X connect 21 0 23 0;
 #X connect 22 0 19 0;
-#X connect 24 0 31 0;
-#X connect 25 0 24 0;
-#X connect 26 0 25 0;
-#X connect 26 1 27 0;
-#X connect 27 0 24 0;
-#X connect 28 0 26 0;
-#X connect 29 0 28 0;
-#X connect 31 0 32 0;
-#X connect 32 0 9 0;
-#X connect 32 1 11 0;
-#X connect 32 2 13 0;
+#X connect 24 0 29 0;
+#X connect 25 0 31 0;
+#X connect 25 1 26 0;
+#X connect 26 0 24 0;
+#X connect 27 0 25 0;
+#X connect 29 0 30 0;
+#X connect 30 0 9 0;
+#X connect 30 1 11 0;
+#X connect 30 2 13 0;
+#X connect 31 0 24 0;
 #X restore 48 380 pd midifader;
 #X connect 3 0 23 1;
 #X connect 13 0 9 0;
