@@ -1,5 +1,6 @@
 #N canvas 0 44 220 518 10;
 #X declare -path . -path include;
+#X declare -stdpath extra/moocow -stdlib extra/pdstring;
 #N canvas 220 44 453 328 INIT 0;
 #X obj 16 46 loadbang;
 #X obj 15 12 declare -path . -path include;
@@ -10,7 +11,7 @@ rolemax 7 \; individualmin 0 \; individualmax 63 \; pitch 1 \; gemeinsam
 #X restore 8 14 pd INIT;
 #N canvas 220 44 631 546 Menge 0;
 #X obj 168 17 hsl 128 20 10 10000 1 0 gemeinsam gemeinsam intervall
-20 10 0 11 -204786 -1 -1 819 1;
+20 10 0 11 -204786 -1 -1 0 1;
 #X obj 304 17 hsl 128 20 0 1 0 1 individuell individuell random_range
 20 10 0 11 -204786 -1 -1 0 1;
 #X obj 60 18 tgl 20 0 mitmachen \$0.bli mitmachen 25 10 0 14 -204786
@@ -325,3 +326,5 @@ rolemax 7 \; individualmin 0 \; individualmax 63 \; pitch 1 \; gemeinsam
 #X connect 13 0 12 0;
 #X connect 15 0 12 0;
 #X restore 6 144 pd presets;
+#X obj 13 216 recorder;
+#X obj 13 252 player;
