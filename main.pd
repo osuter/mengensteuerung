@@ -85,7 +85,7 @@ rolemax 7 \; individualmin 0 \; individualmax 63 \; pitch 1 \; gemeinsam
 #X obj 27 178 route analog;
 #X obj 27 21 inlet;
 #X obj 27 204 outlet;
-#X msg 27 106 open 32 \, version;
+#X msg 27 106 open 4 \, version;
 #X obj 175 51 route version;
 #X msg 175 73 0 \, 1 \, 2 \, 3;
 #X obj 175 95 + 14;
