@@ -7,4 +7,4 @@
 #X obj 233 170 einzelneR \$1 5;
 #X obj 269 198 einzelneR \$1 6;
 #X obj 308 226 einzelneR \$1 7;
-#X obj 44 329 click.table 0;
+#X obj 44 329 click.table \$1;
